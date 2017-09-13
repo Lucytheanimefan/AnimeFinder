@@ -12,6 +12,8 @@
 		7CD05A6E1F69C93400565AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD05A6D1F69C93400565AA6 /* Assets.xcassets */; };
 		7CD05A711F69C93400565AA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CD05A6F1F69C93400565AA6 /* Main.storyboard */; };
 		7CD05A7C1F69C93400565AA6 /* AnimeFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD05A7B1F69C93400565AA6 /* AnimeFinderTests.swift */; };
+		7CD05A8F1F69C96C00565AA6 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD05A8E1F69C96C00565AA6 /* FinderSync.swift */; };
+		7CD05A931F69C96C00565AA6 /* FinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7CD05A8A1F69C96C00565AA6 /* FinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +24,28 @@
 			remoteGlobalIDString = 7CD05A651F69C93400565AA6;
 			remoteInfo = AnimeFinder;
 		};
+		7CD05A911F69C96C00565AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CD05A5E1F69C93400565AA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CD05A891F69C96C00565AA6;
+			remoteInfo = FinderExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CD05A971F69C96C00565AA6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7CD05A931F69C96C00565AA6 /* FinderExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7CD05A661F69C93400565AA6 /* AnimeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +57,10 @@
 		7CD05A771F69C93400565AA6 /* AnimeFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimeFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD05A7B1F69C93400565AA6 /* AnimeFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeFinderTests.swift; sourceTree = "<group>"; };
 		7CD05A7D1F69C93400565AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CD05A8A1F69C96C00565AA6 /* FinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD05A8D1F69C96C00565AA6 /* FinderExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderExtension.entitlements; sourceTree = "<group>"; };
+		7CD05A8E1F69C96C00565AA6 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
+		7CD05A901F69C96C00565AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CD05A871F69C96C00565AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +93,7 @@
 			children = (
 				7CD05A681F69C93400565AA6 /* AnimeFinder */,
 				7CD05A7A1F69C93400565AA6 /* AnimeFinderTests */,
+				7CD05A8B1F69C96C00565AA6 /* FinderExtension */,
 				7CD05A671F69C93400565AA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +103,7 @@
 			children = (
 				7CD05A661F69C93400565AA6 /* AnimeFinder.app */,
 				7CD05A771F69C93400565AA6 /* AnimeFinderTests.xctest */,
+				7CD05A8A1F69C96C00565AA6 /* FinderExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +129,24 @@
 			path = AnimeFinderTests;
 			sourceTree = "<group>";
 		};
+		7CD05A8B1F69C96C00565AA6 /* FinderExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7CD05A8E1F69C96C00565AA6 /* FinderSync.swift */,
+				7CD05A901F69C96C00565AA6 /* Info.plist */,
+				7CD05A8C1F69C96C00565AA6 /* Supporting Files */,
+			);
+			path = FinderExtension;
+			sourceTree = "<group>";
+		};
+		7CD05A8C1F69C96C00565AA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CD05A8D1F69C96C00565AA6 /* FinderExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,10 +157,12 @@
 				7CD05A621F69C93400565AA6 /* Sources */,
 				7CD05A631F69C93400565AA6 /* Frameworks */,
 				7CD05A641F69C93400565AA6 /* Resources */,
+				7CD05A971F69C96C00565AA6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7CD05A921F69C96C00565AA6 /* PBXTargetDependency */,
 			);
 			name = AnimeFinder;
 			productName = AnimeFinder;
@@ -131,6 +187,23 @@
 			productReference = 7CD05A771F69C93400565AA6 /* AnimeFinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7CD05A891F69C96C00565AA6 /* FinderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CD05A941F69C96C00565AA6 /* Build configuration list for PBXNativeTarget "FinderExtension" */;
+			buildPhases = (
+				7CD05A861F69C96C00565AA6 /* Sources */,
+				7CD05A871F69C96C00565AA6 /* Frameworks */,
+				7CD05A881F69C96C00565AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinderExtension;
+			productName = FinderExtension;
+			productReference = 7CD05A8A1F69C96C00565AA6 /* FinderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +225,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7CD05A651F69C93400565AA6;
 					};
+					7CD05A891F69C96C00565AA6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 65ZN6CM2H7;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7CD05A611F69C93400565AA6 /* Build configuration list for PBXProject "AnimeFinder" */;
@@ -169,6 +247,7 @@
 			targets = (
 				7CD05A651F69C93400565AA6 /* AnimeFinder */,
 				7CD05A761F69C93400565AA6 /* AnimeFinderTests */,
+				7CD05A891F69C96C00565AA6 /* FinderExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +263,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7CD05A751F69C93400565AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CD05A881F69C96C00565AA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +296,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CD05A861F69C96C00565AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CD05A8F1F69C96C00565AA6 /* FinderSync.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +311,11 @@
 			isa = PBXTargetDependency;
 			target = 7CD05A651F69C93400565AA6 /* AnimeFinder */;
 			targetProxy = 7CD05A781F69C93400565AA6 /* PBXContainerItemProxy */;
+		};
+		7CD05A921F69C96C00565AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CD05A891F69C96C00565AA6 /* FinderExtension */;
+			targetProxy = 7CD05A911F69C96C00565AA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -327,6 +426,7 @@
 		7CD05A811F69C93400565AA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65ZN6CM2H7;
@@ -341,6 +441,7 @@
 		7CD05A821F69C93400565AA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65ZN6CM2H7;
@@ -384,6 +485,36 @@
 			};
 			name = Release;
 		};
+		7CD05A951F69C96C00565AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinderExtension/FinderExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 65ZN6CM2H7;
+				INFOPLIST_FILE = FinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lucy.AnimeFinder.FinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7CD05A961F69C96C00565AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinderExtension/FinderExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 65ZN6CM2H7;
+				INFOPLIST_FILE = FinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lucy.AnimeFinder.FinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,6 +540,14 @@
 			buildConfigurations = (
 				7CD05A841F69C93400565AA6 /* Debug */,
 				7CD05A851F69C93400565AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7CD05A941F69C96C00565AA6 /* Build configuration list for PBXNativeTarget "FinderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CD05A951F69C96C00565AA6 /* Debug */,
+				7CD05A961F69C96C00565AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
