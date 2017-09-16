@@ -12,7 +12,7 @@ import FinderSync
 class FinderSync: FIFinderSync {
 
     let name = "Anime"
-    var myFolderURL = URL(fileURLWithPath: "/Users/lucyzhang/Github/Anime/")
+    var myFolderURL = URL(fileURLWithPath: "/") // LOL every single folder!
     
     override init() {
         super.init()
@@ -20,7 +20,7 @@ class FinderSync: FIFinderSync {
         NSLog("FinderSync() launched from %@", Bundle.main.bundlePath as NSString)
         
         // Set up the directory we are syncing.
-        FIFinderSyncController.default().directoryURLs = [self.myFolderURL]
+        FIFinderSyncController.default().directoryURLs = []
         
         // Set up images for our badge identifiers. For demonstration purposes, this uses off-the-shelf images.
         FIFinderSyncController.default().setBadgeImage(NSImage(named: NSImageNameColorPanel)!, label: "Status One" , forBadgeIdentifier: "One")
@@ -68,15 +68,16 @@ class FinderSync: FIFinderSync {
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         // Produce a menu for the extension.
         let menu = NSMenu(title: "")
-        menu.addItem(withTitle: "Example Menu Item", action: #selector(sampleAction(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Track current directory", action: #selector(trackCurrentDirectory(_:)), keyEquivalent: "")
         return menu
     }
     
-    @IBAction func sampleAction(_ sender: AnyObject?) {
+    @IBAction func trackCurrentDirectory(_ sender: AnyObject?) {
         let target = FIFinderSyncController.default().targetedURL()
         let items = FIFinderSyncController.default().selectedItemURLs()
         
         let item = sender as! NSMenuItem
+        
         // target is the path we're in
         // items is the full path to the selected file
         NSLog("sampleAction: menu item: %@, target = %@, items = ", item.title as NSString, target!.path as NSString)
