@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C63B2A61F69CB6000FF4996 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C63B2A51F69CB6000FF4996 /* FinderSync.framework */; };
+		7C63B2A71F6CD39300FF4996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD05A6D1F69C93400565AA6 /* Assets.xcassets */; };
 		7CD05A6A1F69C93400565AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD05A691F69C93400565AA6 /* AppDelegate.swift */; };
 		7CD05A6C1F69C93400565AA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD05A6B1F69C93400565AA6 /* ViewController.swift */; };
 		7CD05A6E1F69C93400565AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD05A6D1F69C93400565AA6 /* Assets.xcassets */; };
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C63B2A51F69CB6000FF4996 /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
 		7CD05A661F69C93400565AA6 /* AnimeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD05A691F69C93400565AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CD05A6B1F69C93400565AA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C63B2A61F69CB6000FF4996 /* FinderSync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C63B2A41F69CB5F00FF4996 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C63B2A51F69CB6000FF4996 /* FinderSync.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CD05A5D1F69C93400565AA6 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 				7CD05A7A1F69C93400565AA6 /* AnimeFinderTests */,
 				7CD05A8B1F69C96C00565AA6 /* FinderExtension */,
 				7CD05A671F69C93400565AA6 /* Products */,
+				7C63B2A41F69CB5F00FF4996 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C63B2A71F6CD39300FF4996 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +548,7 @@
 				7CD05A821F69C93400565AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CD05A831F69C93400565AA6 /* Build configuration list for PBXNativeTarget "AnimeFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +557,7 @@
 				7CD05A851F69C93400565AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CD05A941F69C96C00565AA6 /* Build configuration list for PBXNativeTarget "FinderExtension" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +566,7 @@
 				7CD05A961F69C96C00565AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

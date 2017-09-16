@@ -11,7 +11,8 @@ import FinderSync
 
 class FinderSync: FIFinderSync {
 
-    var myFolderURL = URL(fileURLWithPath: "/Users/Shared/MySyncExtension Documents")
+    let name = "Anime"
+    var myFolderURL = URL(fileURLWithPath: "/Users/lucyzhang/Github/Anime/")
     
     override init() {
         super.init()
@@ -23,7 +24,7 @@ class FinderSync: FIFinderSync {
         
         // Set up images for our badge identifiers. For demonstration purposes, this uses off-the-shelf images.
         FIFinderSyncController.default().setBadgeImage(NSImage(named: NSImageNameColorPanel)!, label: "Status One" , forBadgeIdentifier: "One")
-        FIFinderSyncController.default().setBadgeImage(NSImage(named: NSImageNameCaution)!, label: "Status Two", forBadgeIdentifier: "Two")
+        FIFinderSyncController.default().setBadgeImage(#imageLiteral(resourceName: "penguin"), label: "Status Two", forBadgeIdentifier: "Two")
     }
     
     // MARK: - Primary Finder Sync protocol methods
@@ -45,22 +46,23 @@ class FinderSync: FIFinderSync {
         
         // For demonstration purposes, this picks one of our two badges, or no badge at all, based on the filename.
         let whichBadge = abs(url.path.hash) % 3
-        let badgeIdentifier = ["", "One", "Two"][whichBadge]
+        let badgeIdentifier = ["","One", "Two"][whichBadge]
         FIFinderSyncController.default().setBadgeIdentifier(badgeIdentifier, for: url)
     }
     
     // MARK: - Menu and toolbar item support
     
     override var toolbarItemName: String {
-        return "FinderSy"
+        return "Anime"
     }
     
     override var toolbarItemToolTip: String {
-        return "FinderSy: Click the toolbar item for a menu."
+        return name + ": Click the toolbar item for a menu."
     }
     
     override var toolbarItemImage: NSImage {
-        return NSImage(named: NSImageNameCaution)!
+        print(#imageLiteral(resourceName: "penguin").description)
+        return #imageLiteral(resourceName: "penguin")
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
@@ -75,6 +77,8 @@ class FinderSync: FIFinderSync {
         let items = FIFinderSyncController.default().selectedItemURLs()
         
         let item = sender as! NSMenuItem
+        // target is the path we're in
+        // items is the full path to the selected file
         NSLog("sampleAction: menu item: %@, target = %@, items = ", item.title as NSString, target!.path as NSString)
         for obj in items! {
             NSLog("    %@", obj.path as NSString)

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import FinderSync
 
 class ViewController: NSViewController {
 
