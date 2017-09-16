@@ -45,8 +45,8 @@ class FinderSync: FIFinderSync {
         NSLog("requestBadgeIdentifierForURL: %@", url.path as NSString)
         
         // For demonstration purposes, this picks one of our two badges, or no badge at all, based on the filename.
-        let whichBadge = abs(url.path.hash) % 3
-        let badgeIdentifier = ["","One", "Two"][whichBadge]
+        //let whichBadge = abs(url.path.hash) % 3
+        let badgeIdentifier = "Two"//["","One", "Two"][whichBadge]
         FIFinderSyncController.default().setBadgeIdentifier(badgeIdentifier, for: url)
     }
     
@@ -61,7 +61,7 @@ class FinderSync: FIFinderSync {
     }
     
     override var toolbarItemImage: NSImage {
-        print(#imageLiteral(resourceName: "penguin").description)
+        // print(#imageLiteral(resourceName: "penguin").description)
         return #imageLiteral(resourceName: "penguin")
     }
     
@@ -80,6 +80,9 @@ class FinderSync: FIFinderSync {
         // target is the path we're in
         // items is the full path to the selected file
         NSLog("sampleAction: menu item: %@, target = %@, items = ", item.title as NSString, target!.path as NSString)
+        
+        FIFinderSyncController.default().directoryURLs = [URL(fileURLWithPath:target!.path)]
+
         for obj in items! {
             NSLog("    %@", obj.path as NSString)
         }
